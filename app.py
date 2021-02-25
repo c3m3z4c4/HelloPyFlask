@@ -12,10 +12,10 @@ app = Flask(__name__)
 # app.config['MYSQL_DB'] = 'SportCenter'
 # app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
 # app.config['MYSQL_HOST'] = '0.0.0.0'
-app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
-app.config['MYSQL_USER'] = 'bf20c638b40cd5'
-app.config['MYSQL_PASSWORD'] = '56e57bd6'
-app.config['MYSQL_DB'] = 'heroku_a728963e4912379'
+app.config['MYSQL_HOST'] = 'https://mx46.hostgator.mx/'
+app.config['MYSQL_USER'] = 'mezadigi_dbtest'
+app.config['MYSQL_PASSWORD'] = '4nonimouS'
+app.config['MYSQL_DB'] = 'mezadigi_sportcenter'
 # app.config['MYSQL_DB'] = 'heroku_3d1434870247f00'
 mysql = MySQL(app)
 
