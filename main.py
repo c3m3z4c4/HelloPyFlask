@@ -80,4 +80,4 @@ def delete_article(sku):
 
 if __name__ == '__main__':
     # application will start listening for web request on port 5000
-    app.run(port=5000, debug=False)
+    app.run(port=80, debug=False)
