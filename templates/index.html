@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="row">
+  <div class="col-md-5">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages%}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="card card-body">
+      <form action="/add" method="POST">
+        <div class="form-group">
+          <input type="text" name="article" placeholder="Article name" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" name="description" placeholder="Article description" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" name="price" placeholder="Article price" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" name="stock" placeholder="Article stock" class="form-control">
+        </div>
+        <div class="form-group">
+          <button type="submit"class="btn btn-primary btn-block btn-lg">Save</button>
+        </div>   
+      </form>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <table class="table table-bordered table-striped bg-white table-sm">
+        <thead>
+          <tr>
+            <th>Article </th>
+            <th>Description </th>
+            <th>Price </th>
+            <th>Stock </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for article in articles %}
+            <tr>
+              <td>{{ article.1 }}</td>
+              <td>{{ article.2 }}</td>
+              <td>{{ article.3 }}</td>
+              <td>{{ article.4 }}</td>
+              <td><a href="/edit/{{article.0}}" class="btn btn-outline-warning">Edit</a></td>
+              <td><a href="/delete/{{article.0}}" class="btn btn-outline-danger btn-delete">Delete</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  </div>
+
+</div>
+
+
+
+
+
+
+{% endblock%}
