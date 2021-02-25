@@ -22,7 +22,7 @@ mysql = MySQL(app)
 app.secret_key = 'mysecretkey'
 
 
-@app.route("/")
+@app.route("/", nethods=['GET'])
 def index():
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM articles')
@@ -80,4 +80,4 @@ def delete_article(sku):
 
 if __name__ == '__main__':
     # application will start listening for web request on port 5000
-    app.run(port=80, debug=False)
+    app.run(port=8000, debug=False)
