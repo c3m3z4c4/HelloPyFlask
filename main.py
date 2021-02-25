@@ -22,7 +22,7 @@ mysql = MySQL(app)
 app.secret_key = 'mysecretkey'
 
 
-@app.route("/", nethods=['GET'])
+@app.route("/")
 def index():
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM articles')
