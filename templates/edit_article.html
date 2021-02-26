@@ -3,18 +3,18 @@
 {% block body %}
 <div class="col-md-4 offset-md-4">
   <div class="card card-body">
-    <form action="/update/{{article.0}}" method="POST">
+    <form action="/update/{{article.sku}}" method="POST">
       <div class="form-group">
-        <input type="text" name="article" placeholder="Article name" class="form-control" value="{{ article.1 }}">
+        <input type="text" name="article" placeholder="Article name" class="form-control" value="{{ article.article }}">
       </div>
       <div class="form-group">
-        <input type="text" name="description" placeholder="Article description" class="form-control" value="{{ article.2 }}">
+        <input type="text" name="description" placeholder="Article description" class="form-control" value="{{ article.description }}">
       </div>
       <div class="form-group">
-        <input type="text" name="price" placeholder="Article price" class="form-control" value="{{ article.3 }}">
+        <input type="text" name="price" placeholder="Article price" class="form-control" value="{{ article.price }}">
       </div>
       <div class="form-group">
-        <input type="text" name="stock" placeholder="Article stock" class="form-control" value="{{ article.4 }}">
+        <input type="text" name="stock" placeholder="Article stock" class="form-control" value="{{ article.stock }}">
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block btn-lg">Save</button>

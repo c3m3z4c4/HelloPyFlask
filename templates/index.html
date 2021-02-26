@@ -48,12 +48,12 @@
         <tbody>
           {% for article in articles %}
             <tr>
-              <td>{{ article.1 }}</td>
-              <td>{{ article.2 }}</td>
-              <td>{{ article.3 }}</td>
-              <td>{{ article.4 }}</td>
-              <td><a href="/edit/{{article.0}}" class="btn btn-outline-warning">Edit</a></td>
-              <td><a href="/delete/{{article.0}}" class="btn btn-outline-danger btn-delete">Delete</a></td>
+              <td>{{ article.article }}</td>
+              <td>{{ article.description }}</td>
+              <td>{{ article.price }}</td>
+              <td>{{ article.stock }}</td>
+              <td><a href="/edit/{{ article.sku }}" class="btn btn-outline-warning" method="GET">Edit</a></td>
+              <td><a href="/article/{{ article.sku }}" class="btn btn-outline-danger btn-delete" method='DELETE'>Delete</a></td>
             </tr>
           {% endfor %}
         </tbody>
