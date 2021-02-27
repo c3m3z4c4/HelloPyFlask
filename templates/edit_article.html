@@ -3,7 +3,7 @@
 {% block body %}
 <div class="col-md-4 offset-md-4">
   <div class="card card-body">
-    <form action="/update/{{article.sku}}" method="POST">
+    <form action="/update/{{ article.sku }}" method="POST">
       <div class="form-group">
         <input type="text" name="article" placeholder="Article name" class="form-control" value="{{ article.article }}">
       </div>

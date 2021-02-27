@@ -53,7 +53,7 @@
               <td>{{ article.price }}</td>
               <td>{{ article.stock }}</td>
               <td><a href="/edit/{{ article.sku }}" class="btn btn-outline-warning" method="GET">Edit</a></td>
-              <td><a href="/article/{{ article.sku }}" class="btn btn-outline-danger btn-delete" method='DELETE'>Delete</a></td>
+              <td><a href="/delete/{{ article.sku }}" class="btn btn-outline-danger btn-delete" method='DELETE'>Delete</a></td>
             </tr>
           {% endfor %}
         </tbody>
