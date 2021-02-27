@@ -13,8 +13,8 @@ app.secret_key = 'mysecretkey'
 
 @app.route('/')
 def index():
-    # url = 'https://api-sportcenter.herokuapp.com/articles'
-    url = 'http://localhost:6000/articles'
+    url = 'https://api-sportcenter.herokuapp.com/articles'
+    # url = 'http://localhost:6000/articles'
     res = requests.get(url)
     data = res.json()
     print(data)
@@ -29,8 +29,8 @@ def add_article():
         price = request.form['price']
         stock = request.form['stock']
 
-        # url = 'https://api-sportcenter.herokuapp.com/articles'
-        url = 'http://localhost:6000/articles'
+        url = 'https://api-sportcenter.herokuapp.com/articles'
+        # url = 'http://localhost:6000/articles'
         payload = {'article': '' + article + '', 'description': '' + description + '',
                    'price': '' + price + '', 'stock': '' + stock + ''}
         headers = {'content-type': 'application/json'}
@@ -42,8 +42,8 @@ def add_article():
 
 @app.route('/edit/<sku>')
 def edit_article(sku):
-    # req = 'https://api-sportcenter.herokuapp.com/article/' + str(sku)
-    req = 'http://localhost:6000/article/' + str(sku)
+    req = 'https://api-sportcenter.herokuapp.com/article/' + str(sku)
+    # req = 'http://localhost:6000/article/' + str(sku)
     res = requests.get(req)
     data = res.json()
     return render_template('edit_article.html', article=data)
@@ -52,15 +52,13 @@ def edit_article(sku):
 @app.route('/update/<sku>', methods=['POST'])
 def update_article(sku):
     if request.method == 'POST':
-        # qs = request.get_json()
-        # return jsonify({'request': qs})r
         print(sku)
 
         upd_article = request.form['article']
         upd_description = request.form['description']
         upd_price = request.form['price']
         upd_stock = request.form['stock']
-        req = 'http://localhost:6000/article/' + str(sku)
+        req = 'https://api-sportcenter.herokuapp.com/article/' + str(sku)
         print(req)
         body = {'article': ''+str(upd_article)+'', 'description': '' +
                 str(upd_description) + '', 'price': '' + str(upd_price) + '', 'stock': '' + str(upd_stock) + ''}
@@ -76,8 +74,8 @@ def update_article(sku):
 
 @app.route("/delete/<string:sku>")
 def delete_article(sku):
-    # req = 'https://api-sportcenter.herokuapp.com/article/' + str(sku)
-    req = 'http://localhost:6000/article/' + str(sku)
+    req = 'https://api-sportcenter.herokuapp.com/article/' + str(sku)
+    # req = 'http://localhost:6000/article/' + str(sku)
     res = requests.delete(req)
     flash('Article Deleted Succesfully')
     return redirect(url_for('index'))
