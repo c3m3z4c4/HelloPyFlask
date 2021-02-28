@@ -1,17 +1,9 @@
 pipeline {
     agent  'any'
-    tools {
-      python 'Python-3.9.2'
-    }
     stages {
-        stage('build') {
+        stage('Deployment') {
             steps {
-                sh 'pip3 install flask
-            }
-        }
-        stage('test') {
-            steps {
-                sh 'python3 test.py'
+                build quietPeriod: 2, wait: false, job: 'SportCenter'
             }
         }
     }
